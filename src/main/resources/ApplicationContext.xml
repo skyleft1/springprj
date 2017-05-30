@@ -18,6 +18,16 @@
         http://www.springframework.org/schema/tx 
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+<!-- 
+    <bean id="sampleService2" class="mybatis.service.ServiceBook">
+        <property name="session" ref="sqlSession" />
+        <property name="dao"     ref="daobook" />
+    </bean>
+    
+    <bean id="daobook" class="mybatis.dao.DaoBook">
+        <property name="session" ref="sqlSession" />
+    </bean>
+-->
         
     <!-- step1. annotation 설정 -->
     <!-- Enables the Spring MVC @Controller programming model -->
@@ -31,13 +41,13 @@
     <!-- @Controller 어노테이션이 지정된 클래스를 컨테이너에 자동으로 등록 되게 하는 설정 -->
     <!-- base-package 속성에 자동 스캔할 패키지 경로를 입력                             -->
     <!-- 복수의 패키지를 사용하고 싶은 경우 <context:component-scan> 태그를 복수개 작성  -->
-    <context:component-scan base-package="java24.board" /> 
+    <context:component-scan base-package="java23.mybatis.model" /> 
     
     <!-- step3. 데이터베이스 커넥션 설정 -->
     <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <beans:property name="driverClassName"   value="com.mysql.jdbc.Driver" />
-        <beans:property name="url"               value="jdbc:mysql://localhost:5600/springboard?characterEncoding=utf8" />
-        <beans:property name="username"          value="tester1" />
+        <beans:property name="url"               value="jdbc:mysql://localhost:5600/book_db?useUnicode=true&amp;characterEncoding=utf8" />
+        <beans:property name="username"          value="root" />
         <beans:property name="password"          value="1234" />
              
         <beans:property name="defaultAutoCommit"          value="true"/> 
@@ -48,7 +58,7 @@
     <!-- SessionFactory 설정 :: MyBatis가 사용할 Database에 연결하도록 설정 -->
     <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <beans:property name="dataSource"         ref="dataSource" />
-        <beans:property name="configLocation"     value="classpath:java24.board/Configuration.xml" />
+        <beans:property name="configLocation"     value="classpath:Configuration.xml" />
         
         <!-- mybatis 디렉토리에 xml 파일만 추가해주면 알아서 xml내의 쿼리 자동 인식 -->
         <!-- <beans:property name="mapperLocations"    value="classpath*:mybatis/**/mapper*.xml" />  -->
@@ -59,7 +69,7 @@
         <beans:constructor-arg index="0" ref="sqlSessionFactory" />
     </beans:bean>   
     
-    <!-- step4. 트랜잭션 설정 :  commit, rollback -->
+     <!-- step4. 트랜잭션 설정 :  commit, rollback -->
     <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <beans:property name="dataSource" ref="dataSource" />
     </beans:bean>
@@ -97,15 +107,6 @@
         </tx:attributes>
     </tx:advice>
     
-</beans:beans>
-
-
-
-
-
-
-
-
-
-
-
+</beans:beans>    
+    
+ 

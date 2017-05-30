@@ -8,7 +8,6 @@ build/
 logs/
 
 
-
 # 파일 제외
 .classpath
 .project

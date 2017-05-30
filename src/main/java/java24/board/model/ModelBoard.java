@@ -1,3 +1,4 @@
+
 package java24.board.model;
 
 import java.util.Date;
