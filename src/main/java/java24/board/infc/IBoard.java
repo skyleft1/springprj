@@ -70,4 +70,8 @@ public interface IBoard {
     
     int deleteComment(ModelComments comments );
 
-}
+    
+    
+    
+    // 천지안ㅎ 
+} 
