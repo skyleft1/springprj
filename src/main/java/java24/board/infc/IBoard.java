@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 package java24.board.infc;
 
 import java.util.HashMap;
@@ -80,5 +69,7 @@ public interface IBoard {
     List<ModelComments> updateComment(ModelComments updateValue, ModelComments searchValue);
     
     int deleteComment(ModelComments comments );
+    
+    //ㅏㄴ얼;ㅣㅇ런;ㅣ라ㅓㅁ이라ㅓ니;ㄹㅇㄴㅁㄹㄹㄴㄹㄴ
 
 }
