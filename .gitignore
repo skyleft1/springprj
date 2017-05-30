@@ -7,16 +7,7 @@ bin/
 build/
 logs/
 
-/local.properties
-/settings.gradle
-/.gradle
-/.idea
-/.settings
-/gradle
-/.classpath
-/.project
-/gradlew
-/gradlew.bat
+
 
 # 파일 제외
 .classpath
@@ -41,3 +32,4 @@ src/test/java/*
 /gradle
 /gradlew
 /gradlew.bat
+/.gitignore.bak
