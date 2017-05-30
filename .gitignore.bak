@@ -1,6 +1,29 @@
+# 폴더 제외
+.git/
 .gradle/
+.idea/
+.settings/
 bin/
 build/
 logs/
-.idea/
-.settings/
+
+# 파일 제외
+.classpath
+.project
+local.properties
+settings.gradle
+
+
+!src/main/java/
+src/main/java/*
+!src/main/java/java24/
+
+!src/main/resources/
+src/main/resources/*
+!src/main/resources/*.xml
+!src/main/resources/*.properties
+!src/main/resources/java24/
+
+!src/test/java/
+src/test/java/*
+!src/test/java/java24/
